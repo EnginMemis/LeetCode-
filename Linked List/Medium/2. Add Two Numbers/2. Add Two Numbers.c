@@ -9,7 +9,7 @@ ListNode* createNode(int value){
 
 ListNode* addNode(ListNode* list, int val){
     
-    ListNode *temp;
+    	ListNode *temp;
 	ListNode *node;
 		
 	if(list == NULL){
@@ -47,33 +47,32 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     	l3 = addNode(l3, sum);
     	l1 = l1->next;
     	l2 = l2->next;
-	}
+    }
 	
 	if(l2 == NULL && l1 != NULL){
 		while(l1 != NULL){
 			sum = l1->val + onHand;
-	    	onHand = sum / 10;
-	    	sum %= 10;
-	    	
-	    	l3 = addNode(l3, sum);
-	    	l1 = l1->next;
+			onHand = sum / 10;
+			sum %= 10;
+
+			l3 = addNode(l3, sum);
+			l1 = l1->next;
 		}
 	}
 	
 	else if(l1 == NULL && l2 != NULL){
 		while(l2 != NULL){
 			sum = l2->val + onHand;
-	    	onHand = sum / 10;
-	    	sum %= 10;
-	    	
-	    	l3 = addNode(l3, sum);
-	    	l2 = l2->next;
-		}
+			onHand = sum / 10;
+			sum %= 10;
+
+			l3 = addNode(l3, sum);
+			l2 = l2->next;
+	        }
 	}
     
-    	if(onHand == 1){
-    		l3 = addNode(l3, 1);
-	}
+    if(onHand == 1)
+    	l3 = addNode(l3, 1);
     
     return l3;
 }
