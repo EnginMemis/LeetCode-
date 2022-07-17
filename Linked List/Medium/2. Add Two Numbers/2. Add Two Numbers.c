@@ -13,7 +13,7 @@ ListNode* addNode(ListNode* list, int val){
 	ListNode *node;
 		
 	if(list == NULL){
-    	list = createNode(val);
+    		list = createNode(val);
 	}
 	else{
 		temp = list;
