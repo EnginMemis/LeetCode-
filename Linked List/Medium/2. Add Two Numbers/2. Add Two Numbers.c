@@ -71,8 +71,8 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 		}
 	}
     
-    if(onHand == 1){
-    	l3 = addNode(l3, 1);
+    	if(onHand == 1){
+    		l3 = addNode(l3, 1);
 	}
     
     return l3;
