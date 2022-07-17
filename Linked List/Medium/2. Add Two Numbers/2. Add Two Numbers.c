@@ -30,24 +30,23 @@ ListNode* addNode(ListNode* list, int val){
 }
 
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
-    ListNode *l3 = NULL;
-    
-    int onHand;
-    int sum;
-    
-    
-    sum = 0;
-    onHand = 0;
-    while(l1 != NULL && l2 != NULL){
-    	sum = l1->val + l2->val;
-    	sum += onHand;
-    	onHand = sum / 10;
-    	sum %= 10;
-    	
-    	l3 = addNode(l3, sum);
-    	l1 = l1->next;
-    	l2 = l2->next;
-    }
+	ListNode *l3 = NULL;
+
+	int onHand;
+	int sum;
+	
+	sum = 0;
+	onHand = 0;
+	while(l1 != NULL && l2 != NULL){
+		sum = l1->val + l2->val;
+		sum += onHand;
+		onHand = sum / 10;
+		sum %= 10;
+
+		l3 = addNode(l3, sum);
+		l1 = l1->next;
+		l2 = l2->next;
+	}
 	
 	if(l2 == NULL && l1 != NULL){
 		while(l1 != NULL){
@@ -70,9 +69,9 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 			l2 = l2->next;
 	        }
 	}
-    
-    if(onHand == 1)
-    	l3 = addNode(l3, 1);
+	
+	if(onHand == 1)
+		l3 = addNode(l3, 1);
     
     return l3;
 }
